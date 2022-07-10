@@ -13,54 +13,21 @@
       Hexo
     
   </title>
-  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
-  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
   
 <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/plugins/gitment.css">
 
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
   
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
-  
-  
-  
-  
-    <!-- MathJax support START -->
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <!-- MathJax support END -->
-  
-
-
-  
-  
-    
-<script src="/js/local-search.js"></script>
-
+<script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script>
 
 <meta name="generator" content="Hexo 6.2.0"></head>
-<div class="wechat-share">
-  <img src="/css/images/logo.png" />
-</div>
   <body>
     <header class="header fixed-header">
   <div class="header-container">
@@ -73,12 +40,6 @@
         <li class="list-item">
           
             <a href="/" class="item-link active">Home</a>
-          
-        </li>
-      
-        <li class="list-item">
-          
-            <a href="/series/" class="item-link">Series</a>
           
         </li>
       
@@ -106,13 +67,6 @@
           
         </li>
       
-      
-        <li class="menu-item menu-item-search right-list">
-    <a role="button" class="popup-trigger">
-        <i class="fa fa-search fa-fw"></i>
-    </a>
-</li>
-      
     </ul>
     <div class="menu">
       <span class="icon-bar"></span>
@@ -125,12 +79,6 @@
           <li class="menu-item">
             
               <a href="/" class="menu-link mobile-active">Home</a>
-            
-          </li>
-        
-          <li class="menu-item">
-            
-              <a href="/series/" class="menu-link">Series</a>
             
           </li>
         
@@ -160,30 +108,6 @@
         
       </ul>
     </div>
-    
-      <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-            <span class="search-icon">
-                <i class="fa fa-search"></i>
-            </span>
-            <div class="search-input-container">
-                <input autocomplete="off" autocapitalize="off"
-                    placeholder="Please enter your keyword(s) to search." spellcheck="false"
-                    type="search" class="search-input">
-            </div>
-            <span class="popup-btn-close">
-                <i class="fa fa-times-circle"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-    
   </div>
 </header>
 
@@ -245,7 +169,6 @@
     &copy; 2022 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     Theme by <a target="_blank" rel="noopener" href="https://github.com/yanm1ng">yanm1ng</a>
-    
   </p>
 </footer>
 
@@ -260,20 +183,19 @@
   }
 </script>
 <script>
-  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
-      if (hasLine === 'false') {
+      if (hasLine == 'false') {
         figure.find('.gutter').hide();
       }
-      hljs.configure({useBR: true});
       var lang = figure.attr('class').split(' ')[1] || 'code';
       var codeHtml = $(this).html();
       var codeTag = document.createElement('code');
@@ -289,7 +211,6 @@
 
 
 <script src="/js/script.js"></script>
-
 
   </body>
 </html>
