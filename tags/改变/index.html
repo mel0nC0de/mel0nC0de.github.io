@@ -10,7 +10,7 @@
   
   <title>
     
-      Tags | Hexo
+      Hexo
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,68 +112,45 @@
 </header>
 
     <div id="article-banner">
-  <h2>Tags</h2>
-  <p class="post-date">标签检索</p>
+  <h2>Archives</h2>
+  <p class="post-date">文章归档</p>
 </div>
-<main class="app-body">
-  <div id="tag-cloud">
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2022
+  </h1>
+  <div class="section-list">
     
-      <a class="tag2" data-name="tag-运动">运动</a>
     
-      <a class="tag1" data-name="tag-认知">认知</a>
+      <div class="section-list-item">
+        <a href="/2022/07/10/%E4%BB%8E%E7%9F%A5%E9%81%93%E5%88%B0%E5%81%9A%E5%88%B0/" class="archive-title">从知道到做到</a>
+        <p class="archive-date">07-10</p>
+      </div>
     
-      <a class="tag2" data-name="tag-改变">改变</a>
+      <div class="section-list-item">
+        <a href="/2022/07/10/test/" class="archive-title">test</a>
+        <p class="archive-date">07-10</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2022/07/10/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">07-10</p>
+      </div>
     
   </div>
+</section>
   
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-运动">运动</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2022/07/10/从知道到做到/">从知道到做到</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-认知">认知</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2022/07/10/从知道到做到/">从知道到做到</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-改变">改变</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2022/07/10/从知道到做到/">从知道到做到</a>
-          </li>
-        </ul>
-        
-    </div>
-    
 </main>
 
 <script>
   (function () {
-    var url = 'http://example.com/tags/index.html'
-    $('#article-banner').geopattern(url)
-    $('.header').removeClass('fixed-header')
-
-    var tag = location.hash.replace('#', '')
-    if (tag) {
-      var tagId = "#tag-" + tag;
-      $("html, body").animate({
-        scrollTop: $(tagId).offset().top 
-      }, 400)
-    }
+    var url = 'http://example.com/tags/改变/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
   })();
 </script>
     <div class="scroll-top">
