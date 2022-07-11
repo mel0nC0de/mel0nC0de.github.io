@@ -39,7 +39,7 @@
       
         <li class="list-item">
           
-            <a href="/" class="item-link active">Home</a>
+            <a href="/" class="item-link">Home</a>
           
         </li>
       
@@ -78,7 +78,7 @@
         
           <li class="menu-item">
             
-              <a href="/" class="menu-link mobile-active">Home</a>
+              <a href="/" class="menu-link">Home</a>
             
           </li>
         
@@ -111,98 +111,53 @@
   </div>
 </header>
 
-    <main class="app-body">
+    <div id="article-banner">
+  <h2>Archives</h2>
+  <p class="post-date">文章归档</p>
+</div>
+<main class="app-body" id="archives">
   
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/11/%E7%AE%80%E5%8C%96%E4%B8%8E%E4%BC%98%E5%8C%96/">简化与优化</a>
-      </h2>
-      <p class="article-date">July 11, 2022</p>
-      
-        
-  <a href="/tags#读书笔记" >
-    <span class="tag-code">读书笔记</span>
-  </a>
-
-  <a href="/tags#习惯" >
-    <span class="tag-code">习惯</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          简化，就是制定简单容易执行的策略。比如每天早起。起床后开始拉伸。
-优化，就是试图最优化我们的行为。则会将许多行动结合在一起，比如早起后要运动，刷牙时听电子书，上厕所时背单词。
-但优化有个最大的缺点，就是我们没有设置冗余量，更没有考虑每种行为结合时的匹配概率，容易一步走错，步步皆输。
-所以，简 ...
-        
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2022
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2022/07/11/%E7%AE%80%E5%8C%96%E4%B8%8E%E4%BC%98%E5%8C%96/" class="archive-title">简化与优化</a>
+        <p class="archive-date">07-11</p>
       </div>
-      <a class="more" href="/2022/07/11/%E7%AE%80%E5%8C%96%E4%B8%8E%E4%BC%98%E5%8C%96/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/10/%E4%BB%8E%E7%9F%A5%E9%81%93%E5%88%B0%E5%81%9A%E5%88%B0/">从知道到做到</a>
-      </h2>
-      <p class="article-date">July 10, 2022</p>
-      
-        
-  <a href="/tags#运动" >
-    <span class="tag-code">运动</span>
-  </a>
-
-  <a href="/tags#认知" >
-    <span class="tag-code">认知</span>
-  </a>
-
-  <a href="/tags#改变" >
-    <span class="tag-code">改变</span>
-  </a>
-
-      
-      <div class="article-summary">
-        
-          世界上最远的距离，就是从知道到做到。
-知道，只能算从知识上接受了观点，而要做到，则要求我们从心理上、生理上也接受同样的观点，还要能身体力行的去践行他。
-就好像跑步，我们在掌握了“使用前脚掌着地能像弹簧一样省力”、“采用四补一吸来提升无氧阀”的训练重点以后，还远远做不到在实际训练和跑步中运用的 ...
-        
+    
+      <div class="section-list-item">
+        <a href="/2022/07/10/%E4%BB%8E%E7%9F%A5%E9%81%93%E5%88%B0%E5%81%9A%E5%88%B0/" class="archive-title">从知道到做到</a>
+        <p class="archive-date">07-10</p>
       </div>
-      <a class="more" href="/2022/07/10/%E4%BB%8E%E7%9F%A5%E9%81%93%E5%88%B0%E5%81%9A%E5%88%B0/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/10/test/">test</a>
-      </h2>
-      <p class="article-date">July 10, 2022</p>
-      
-      <div class="article-summary">
-        
-          
-        
+    
+      <div class="section-list-item">
+        <a href="/2022/07/10/test/" class="archive-title">test</a>
+        <p class="archive-date">07-10</p>
       </div>
-      <a class="more" href="/2022/07/10/test/">Read more</a>
-    </article>
-  
-    <article class="article-card">
-      <h2 class="article-head">
-        <a href="/2022/07/10/hello-world/">Hello World</a>
-      </h2>
-      <p class="article-date">July 10, 2022</p>
-      
-      <div class="article-summary">
-        
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer ...
-        
+    
+      <div class="section-list-item">
+        <a href="/2022/07/10/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">07-10</p>
       </div>
-      <a class="more" href="/2022/07/10/hello-world/">Read more</a>
-    </article>
-  
-
+    
+  </div>
+</section>
   
 </main>
 
-
+<script>
+  (function () {
+    var url = 'https://mel0nc0de.github.io/tags/读书笔记/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
+  })();
+</script>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
