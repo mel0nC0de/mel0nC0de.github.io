@@ -10,7 +10,7 @@
   
   <title>
     
-      Tags | Mel0nc0de的Blog
+      简化与优化 | Mel0nc0de的Blog
     
   </title>
   <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -112,70 +112,132 @@
 </header>
 
     <div id="article-banner">
-  <h2>Tags</h2>
-  <p class="post-date">标签检索</p>
+  <h2>简化与优化</h2>
+  <p class="post-date">2022-07-11</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
 </div>
 <main class="app-body">
-  <div id="tag-cloud">
+  <article class="post-article">
+    <section class="markdown-content"><p>简化，就是制定简单容易执行的策略。比如每天早起。起床后开始拉伸。</p>
+<p>优化，就是试图最优化我们的行为。则会将许多行动结合在一起，比如早起后要运动，刷牙时听电子书，上厕所时背单词。</p>
+<p>但优化有个最大的缺点，就是我们没有设置冗余量，更没有考虑每种行为结合时的匹配概率，容易一步走错，步步皆输。</p>
+<p>所以，简化更容易形成系统，而优化常常是聚焦目标。而系统与目标的差异，在于长期的持续性。一个长期能持续迭代的系统，能很好的利用上复利模型，从而打败针对短期优化过的模型。</p>
+<p>所以，当我们开始培养一个习惯时，按照《微习惯》定下“一个俯卧撑”、“写下100个字”，也许不是经过优化的目标，但只要你能坚持下来，他就会成为我们持续进步的系统。</p>
+</section>
     
-      <a class="tag0" data-name="tag-运动">运动</a>
+    <!-- <div class="money-like">
+      <div class="reward-btn">
+        赏
+        <span class="money-code">
+          <span class="alipay-code">
+            <div class="code-image"></div>
+            <b>使用支付宝打赏</b>
+          </span>
+          <span class="wechat-code">
+            <div class="code-image"></div>
+            <b>使用微信打赏</b>
+          </span>
+        </span>
+      </div>
+      <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p> -->
+    <!-- </div> -->
+    <!-- <div class="qrcode">
+      <canvas id="share-qrcode"></canvas>
+      <p class="notice">扫描二维码，分享此文章</p>
+    </div> -->
     
-      <a class="tag2" data-name="tag-认知">认知</a>
+      <!-- <div id="comments"></div> -->
     
-      <a class="tag3" data-name="tag-改变">改变</a>
-    
-  </div>
-  
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-运动">运动</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2022/07/10/从知道到做到/">从知道到做到</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-认知">认知</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2022/07/10/从知道到做到/">从知道到做到</a>
-          </li>
-        </ul>
-        
-    </div>
-    
-    <div class="tag-list">
-      <h3 class="tag-name" id="tag-改变">改变</h3>
-      
-        <ul class="tag-preview">
-          <li>
-            <a href="/2022/07/10/从知道到做到/">从知道到做到</a>
-          </li>
-        </ul>
-        
-    </div>
-    
+    <script src="https://utteranc.es/client.js"
+        repo="mel0nC0de/mel0nC0de.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+  </script>
+  </article>
 </main>
 
 <script>
   (function () {
-    var url = 'https://mel0nc0de.github.io/tags/index.html'
-    $('#article-banner').geopattern(url)
+    var url = 'https://mel0nc0de.github.io/2022/07/11/简化与优化/';
+    var banner = ''
+    if (banner) {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
     $('.header').removeClass('fixed-header')
 
-    var tag = location.hash.replace('#', '')
-    if (tag) {
-      var tagId = "#tag-" + tag;
-      $("html, body").animate({
-        scrollTop: $(tagId).offset().top 
-      }, 400)
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+      
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    })
+
+    // qrcode
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+
+    // gitment
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig != "undefined") {
+      var gitment = new Gitment({
+        id: "简化与优化",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
     }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
